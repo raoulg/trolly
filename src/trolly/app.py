@@ -114,7 +114,7 @@ def save_results():
     
     return jsonify({'success': True, 'filepath': filepath})
 
-def run_app(host='0.0.0.0', port=5000, debug=True):
+def run_app(host='0.0.0.0', port=8080, debug=True):
     """Run the Flask application."""
     app.run(host=host, port=port, debug=debug)
 
