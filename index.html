@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethical Trolley Problem</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="welcome-screen" class="screen">
+            <h1>Ethical Dilemmas in Technology</h1>
+            <p>This experiment presents you with ethical dilemmas related to emerging technologies.</p>
+            <p>For each scenario, you'll need to make a choice between two options by pressing the left or right arrow keys.</p>
+            <p>Your reaction time will be measured, so please respond as soon as you've made your decision.</p>
+            <p>There are no right or wrong answers - we're interested in your ethical intuitions.</p>
+            <div class="participant-info">
+                <label for="participant-id">Participant ID:</label>
+                <input type="text" id="participant-id" placeholder="Enter your ID">
+            </div>
+            <button id="start-btn">Start Experiment</button>
+        </div>
+
+        <div id="dilemma-screen" class="screen hidden">
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+            <h2 id="dilemma-title">Dilemma Title</h2>
+            <p id="dilemma-description">Dilemma description will appear here.</p>
+            
+            <div class="choices-container">
+                <div class="choice" id="left-choice">
+                    <h3 id="left-choice-title">Option A</h3>
+                    <p id="left-choice-description">Description of option A</p>
+                </div>
+                <div class="choice" id="right-choice">
+                    <h3 id="right-choice-title">Option B</h3>
+                    <p id="right-choice-description">Description of option B</p>
+                </div>
+            </div>
+            
+            <div class="instructions">
+                <p>Press <span class="key">←</span> for left option or <span class="key">→</span> for right option</p>
+                <p id="timer">0.0s</p>
+            </div>
+        </div>
+
+        <div id="results-screen" class="screen hidden">
+            <h2>Experiment Complete</h2>
+            <p>Thank you for participating in this study.</p>
+            <div id="results-summary">
+                <h3>Your Ethical Framework Tendency:</h3>
+                <div id="framework-result"></div>
+                <div class="result-bar-container">
+                    <div class="result-label">Utilitarian</div>
+                    <div class="result-bar">
+                        <div id="utilitarian-bar" class="result-bar-fill"></div>
+                    </div>
+                    <div class="result-label">Deontological</div>
+                </div>
+                <p id="framework-explanation"></p>
+            </div>
+            <div id="reaction-times">
+                <h3>Your Average Reaction Time:</h3>
+                <p id="avg-reaction-time"></p>
+            </div>
+            <button id="download-results">Download Your Results</button>
+            <button id="restart-btn">Start Over</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
