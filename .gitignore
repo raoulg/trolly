@@ -10,3 +10,4 @@ wheels/
 .venv
 .aider*
 results/
+analysis_output/
