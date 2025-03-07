@@ -119,4 +119,9 @@ def run_app(host='0.0.0.0', port=8080, debug=True):
     app.run(host=host, port=port, debug=debug)
 
 if __name__ == '__main__':
-    run_app()
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == 'view-results':
+        from .view_results import main as view_results_main
+        view_results_main()
+    else:
+        run_app()
