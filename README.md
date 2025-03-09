@@ -13,6 +13,7 @@ An interactive research tool for exploring ethical dilemmas related to emerging 
 ## Installation
 
 ### Using uv (Recommended)
+[uv docs](https://docs.astral.sh/uv/)
 
 ```bash
 # Install uv if you don't have it
