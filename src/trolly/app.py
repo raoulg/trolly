@@ -114,8 +114,9 @@ def save_results():
     
     return jsonify({'success': True, 'filepath': filepath})
 
-def run_app(host='0.0.0.0', port=8080, debug=True):
+def run_app(host='0.0.0.0', port=8080, debug=False):
     """Run the Flask application."""
+    print(f"Starting trolly experiment server at http://{host}:{port}")
     app.run(host=host, port=port, debug=debug)
 
 if __name__ == '__main__':

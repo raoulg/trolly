@@ -27,4 +27,4 @@ RUN pip install --no-cache-dir /app/dist/*.whl
 EXPOSE 8080
 
 # Run the application
-CMD ["trolly-experiment"]
+CMD ["python", "-m", "src.trolly.app"]

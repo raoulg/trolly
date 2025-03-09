@@ -1,2 +1,5 @@
+from .app import run_app
+
 def main() -> None:
-    print("Hello from trolly!")
+    """Run the trolly experiment web server."""
+    run_app()
