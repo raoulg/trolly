@@ -102,3 +102,7 @@ As a participant in this study:
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+# Acknowledgement
+built with 🤖 with [aider](https://aider.chat)
+Tokens: 28k sent, 3.2k received. Cost: $0.13 message, $0.51 session.  
