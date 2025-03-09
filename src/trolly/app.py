@@ -114,15 +114,28 @@ def save_results():
     
     return jsonify({'success': True, 'filepath': filepath})
 
-def run_app(host='0.0.0.0', port=8080, debug=False):
+def run_app(host='0.0.0.0', port=None, debug=False):
     """Run the Flask application."""
+    # Use port 80 by default in production
+    if port is None:
+        port = 80 if not debug else 8080
+    
     print(f"Starting trolly experiment server at http://{host}:{port}")
     app.run(host=host, port=port, debug=debug)
 
 if __name__ == '__main__':
     import sys
-    if len(sys.argv) > 1 and sys.argv[1] == 'view-results':
+    import argparse
+    
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--port', type=int, help='Port to run the server on')
+    parser.add_argument('--debug', action='store_true', help='Run in debug mode')
+    parser.add_argument('--view-results', action='store_true', help='View results instead of running server')
+    
+    args = parser.parse_args()
+    
+    if args.view_results:
         from .view_results import main as view_results_main
         view_results_main()
     else:
-        run_app()
+        run_app(port=args.port, debug=args.debug)

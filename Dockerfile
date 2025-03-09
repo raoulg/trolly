@@ -24,7 +24,7 @@ COPY . .
 RUN pip install --no-cache-dir /app/dist/*.whl
 
 # Expose the port the app runs on
-EXPOSE 8080
+EXPOSE 80
 
 # Run the application
-CMD ["python", "-m", "src.trolly.app"]
+CMD ["python", "-m", "src.trolly.app", "--port", "80"]
