@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: trolly-experiment
+  web: python -m src.trolly.app --port $PORT

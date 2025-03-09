@@ -116,9 +116,9 @@ def save_results():
 
 def run_app(host='0.0.0.0', port=None, debug=False):
     """Run the Flask application."""
-    # Use port 80 by default in production
+    # Use Heroku's PORT environment variable if available
     if port is None:
-        port = 80 if not debug else 8080
+        port = int(os.environ.get('PORT', 5000))
     
     print(f"Starting trolly experiment server at http://{host}:{port}")
     app.run(host=host, port=port, debug=debug)
