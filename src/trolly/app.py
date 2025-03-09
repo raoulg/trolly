@@ -123,7 +123,8 @@ def run_app(host='0.0.0.0', port=None, debug=False):
     print(f"Starting trolly experiment server at http://{host}:{port}")
     app.run(host=host, port=port, debug=debug)
 
-if __name__ == '__main__':
+def cli():
+    """Command line interface for running the app."""
     import sys
     import argparse
     
@@ -139,3 +140,6 @@ if __name__ == '__main__':
         view_results_main()
     else:
         run_app(port=args.port, debug=args.debug)
+
+if __name__ == '__main__':
+    cli()
