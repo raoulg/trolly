@@ -6,22 +6,15 @@ WORKDIR /app
 
 # Copy requirements first to leverage Docker cache
 COPY pyproject.toml .
-COPY src .
-COPY dist .
+COPY src src
 COPY index.html .
 COPY script.js .
 COPY styles.css .
 COPY README.md .
 
-# Install dependencies
+# Install dependencies and package
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir .[all] gunicorn
-
-# Copy the rest of the application
-COPY . .
-
-# Install the wheel
-RUN pip install --no-cache-dir /app/dist/*.whl
 
 # Expose the port the app runs on
 EXPOSE $PORT
