@@ -16,29 +16,20 @@ An interactive research tool for exploring ethical dilemmas related to emerging 
 
 ```bash
 # Install uv if you don't have it
-curl -sSf https://install.ultraviolet.rs | sh
-
-# Create and activate a virtual environment
-uv venv
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # Install dependencies
-uv pip sync
+uv sync
 ```
 
 ### Using pip
+If you also prefer the longest line at the supermarket:
 
 ```bash
 # Create a virtual environment
-python -m venv venv
-
-# Activate the virtual environment
-# On macOS/Linux:
-source venv/bin/activate
-# On Windows:
-# venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+python -m venv .venv
+source .venv/bin/activate
+pip install .
 ```
 
 ## Running the Experiment
