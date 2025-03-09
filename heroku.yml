@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: python -m src.trolly.app --port $PORT
+  web: gunicorn --bind 0.0.0.0:$PORT src.trolly.app:app

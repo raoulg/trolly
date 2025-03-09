@@ -114,6 +114,10 @@ def save_results():
     
     return jsonify({'success': True, 'filepath': filepath})
 
+def create_app():
+    """Create and configure the Flask application."""
+    return app
+
 def run_app(host='0.0.0.0', port=None, debug=False):
     """Run the Flask application."""
     # Use Heroku's PORT environment variable if available

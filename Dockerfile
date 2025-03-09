@@ -15,7 +15,7 @@ COPY README.md .
 
 # Install dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir .[all]
+    pip install --no-cache-dir .[all] gunicorn
 
 # Copy the rest of the application
 COPY . .
