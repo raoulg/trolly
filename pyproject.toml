@@ -18,8 +18,8 @@ dependencies = [
 
 [project.scripts]
 trolly = "trolly:main"
-trolley-experiment = "src.trolly.app:run_app"
-trolley-view-results = "src.trolly.view_results:main"
+trolly-experiment = "trolly.app:run_app"
+trolly-view-results = "trolly.view_results:main"
 
 [build-system]
 requires = ["hatchling"]
