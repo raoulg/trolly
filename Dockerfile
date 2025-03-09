@@ -5,7 +5,13 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Copy requirements first to leverage Docker cache
-COPY pyproject.toml ./
+COPY pyproject.toml .
+COPY src .
+COPY dist .
+COPY index.html .
+COPY script.js .
+COPY styles.css .
+COPY README.md .
 
 # Install dependencies
 RUN pip install --no-cache-dir --upgrade pip && \
